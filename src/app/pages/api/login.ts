@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { signToken } from '../../../../lib/jwt';
 
 
-
+// Default users
 const users = [
     {
         id: 1,
