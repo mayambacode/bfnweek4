@@ -20,6 +20,9 @@ export const authOptions = {
               }
         }),
     ],
+    session: {
+        strategy: 'jwt',
+    },
 };
 
 export const handler = NextAuth(authOptions);
