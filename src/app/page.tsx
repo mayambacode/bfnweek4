@@ -1,15 +1,17 @@
 import Image from "next/image";
 import styles from "./styles/login.module.css";
+import Link from "next/link";
+import login from "./pages/api/login";
+
 
 export default function Home() {
   return (
-    <section className={styles.section}>
-      <form className={styles.form} action="">
-        <input className={styles.input} type="email" placeholder="Email" /> <br />
-        <input className={styles.input} type="password" placeholder="Password" /> <br />
-        <button className={styles.button} type="submit">Login</button> <br />
-        <button className={`${styles.button} ${styles.logoutButton}`} type="submit">Logout</button> <br />
-      </form>
-    </section>
+
+    <div>
+        <h1>Welcome</h1>
+        <Link href="/login">Login</Link>
+    </div>
+   
+   
   );
 }

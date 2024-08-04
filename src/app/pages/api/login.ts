@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { signToken } from '../../../lib/jwt';
+import { signToken } from '../../../../lib/jwt';
 
 
 
 const users = [
     {
         id: 1,
-        username: 'user1',
+        username: 'user',
         password: 'password1',},
 ];
 
