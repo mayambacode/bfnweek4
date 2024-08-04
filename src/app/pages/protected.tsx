@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     return{
         props:{
-            username: payload.username,
+            username: payload.email,
         },
     }
 

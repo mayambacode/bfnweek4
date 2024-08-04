@@ -4,7 +4,7 @@ const SECRET_KEY = process.env.SECRET_KEY || 'secret';
 
 interface JwtPayload {
     id: number;
-    username: string;
+    email: string;
 }
 
 export function signToken(payload: JwtPayload): string {
