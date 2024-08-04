@@ -34,7 +34,7 @@ const LoginPage = () => {
         <section className={styles.section}>
             
             <form className={styles.form} onSubmit={handleSubmit}>
-            <h1> Login in Page</h1>
+            <h1 className={styles.title}> Login in Page</h1>
                 <input
                     className={styles.input}
                     type="text"
@@ -52,7 +52,7 @@ const LoginPage = () => {
                 <button className={styles.button} type="submit">Login</button> <br />
                 <button className={`${styles.button} ${styles.logoutButton}`} type="button">Logout</button> <br />
             </form>
-            {error && <p>{error}</p>}
+            {error && <p className={styles.error}>{error}</p>}
         </section>
     );
 };

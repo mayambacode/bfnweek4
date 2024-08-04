@@ -43,3 +43,10 @@
   .logoutButton:hover {
     background-color: #cc0000;
   }
+
+  .title {
+    text-align: center;
+  }
+  .error {
+   
+  }
