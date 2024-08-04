@@ -9,7 +9,7 @@ export default function Home() {
 
     <div>
         <h1>Welcome</h1>
-        <Link href="/login">Login</Link>
+        <Link href="/pages/login">Login</Link>
     </div>
    
    
