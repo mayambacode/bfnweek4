@@ -1,6 +1,7 @@
 import NextAuth from "next-auth/next";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
+import { NextAuthOptions, SessionStrategy } from "next-auth";
 
 export const authOptions = {
     providers: [
@@ -21,10 +22,10 @@ export const authOptions = {
         }),
     ],
     session: {
-        strategy: 'jwt',
+        strategy: 'jwt' as SessionStrategy,
     },
 };
 
-export const handler = NextAuth(authOptions);
+export default NextAuth(authOptions);
 
-export {handler as GET, handler as POST};
+// export {handler as GET, handler as POST};

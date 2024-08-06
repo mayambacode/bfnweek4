@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../../styles/login.module.css"; // Adjust the import path if necessary
-import login from "../api/login";
+import { signIn } from "next-auth/react"; // Import NextAuth's signIn function
 import Image from "next/image";
 import googleImage from "../../images/google.png";
 import gitImage from "../../images/github.png";
@@ -57,11 +57,11 @@ const LoginPage = () => {
                 <button className={`${styles.button} ${styles.logoutButton}`} type="button">Logout</button> <br />
                 <p>OR</p>
 
-                <button>
+                <button type="button" onClick={() => signIn('google')}>
                     <Image src={googleImage} alt="google" width={100} height={100}></Image>
                 </button>
-                <button>
-                <Image src={gitImage} alt="" width={100} height={100}></Image>
+                <button type="button" onClick={() => signIn('github')}>
+                <Image src={gitImage} alt="github" width={100} height={100}></Image>
                 </button>
                 
             </form>
