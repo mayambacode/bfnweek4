@@ -28,9 +28,9 @@ const LoginPage = () => {
         if (response.ok) {
             const { token } = await response.json();
             document.cookie = `token=${token}; path=/`;
-            router.push('/protected');
+            router.push('/protected'); // Redirect to a protected page after successful login
         } else {
-            setError('Invalid credentials, something went wrong');
+            setError('Invalid credentials, something went wrong'); // Display an error message
         }
     };
 
@@ -38,7 +38,7 @@ const LoginPage = () => {
         <section className={styles.section}>
             
             <form className={styles.form} onSubmit={handleSubmit}>
-            <h1 className={styles.title}> Login in Page</h1>
+                <h1 className={styles.title}>Login Page</h1>
                 <input
                     className={styles.input}
                     type="text"
@@ -61,7 +61,7 @@ const LoginPage = () => {
                     <Image src={googleImage} alt="google" width={100} height={100}></Image>
                 </button>
                 <button type="button" onClick={() => signIn('github')}>
-                <Image src={gitImage} alt="github" width={100} height={100}></Image>
+                    <Image src={gitImage} alt="github" width={100} height={100}></Image>
                 </button>
                 
             </form>
