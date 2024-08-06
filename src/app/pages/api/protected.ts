@@ -3,8 +3,14 @@ import { verifyToken } from "../../../../lib/jwt";
 import React from "react";
 import exp from "constants";
 
+import type { NextApiRequest, NextApiResponse } from "next";
+import authMiddleware from "@/middleware/auth";
 
+const protectedRoute = async (req: NextApiRequest, res: NextApiResponse) => {
+    res.status(200).json({ message: 'You have access to this protected route', user: (req as any).user });
+}
 
+export default authMiddleware(protectedRoute);
 
 
 
