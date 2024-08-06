@@ -6,7 +6,7 @@ import styles from "../../styles/login.module.css"; // Adjust the import path if
 
 
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const router = useRouter();
@@ -19,12 +19,12 @@ const LoginPage = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ email, password }),
         });
 
         if (response.ok) {
             const { token } = await response.json();
-            document.cookie = `token=${token}`;
+            document.cookie = `token=${token}; path=/`;
             router.push('/protected');
         } else {
             setError('Invalid credentials');
@@ -39,8 +39,8 @@ const LoginPage = () => {
                 <input
                     className={styles.input}
                     type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                 /> <br />
                 <input
